@@ -1,5 +1,8 @@
 {
   "type": "module",
+  "scripts": {
+     "dev": "node ES6_basic/0-main.js"
+  },
   "devDependencies": {
     "@babel/core": "^7.24.9",
     "@babel/preset-env": "^7.24.8",

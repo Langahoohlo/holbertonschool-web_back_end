@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-     "dev": "node ES6_basic/0-main.js"
+    "dev": "node ES6_basic/1-block-scoped.js"
   },
   "devDependencies": {
     "@babel/core": "^7.24.9",

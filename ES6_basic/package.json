@@ -1,10 +1,15 @@
 {
   "type": "module",
   "scripts": {
-    "dev": "node 2-main.js"
+    "lint": "./node_modules/.bin/eslint",
+    "check-lint": "lint [0-9]*.js",
+    "dev": "npx babel-node",
+    "test": "jest",
+    "full-test": "./node_modules/.bin/eslint [0-9]*.js && jest"
   },
   "devDependencies": {
     "@babel/core": "^7.24.9",
+    "@babel/node": "^7.24.8",
     "@babel/preset-env": "^7.24.8",
     "babel-jest": "^29.7.0",
     "eslint": "^9.7.0",

@@ -17,15 +17,15 @@ export default class HolbertonClass {
     return this._size;
   }
 
-  set size(in_size) {
-    this._size = in_size;
+  set size(size) {
+    this._size = size;
   }
 
   get location() {
     return this._location;
   }
 
-  set location(in_location) {
-    this._location = in_location;
+  set location(location) {
+    this._location = location;
   }
 }

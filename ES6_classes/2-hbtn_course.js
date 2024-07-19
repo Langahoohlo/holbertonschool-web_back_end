@@ -1,3 +1,15 @@
+function ValidInputs(name, length, students) {
+  if (typeof name !== 'string') {
+    throw new TypeError('name must be a string');
+  }
+  if (typeof length !== 'number') {
+    throw new Error('length must be a number');
+  }
+  if (!Array.isArray(students)) {
+    throw new Error('students must be the an Array');
+  }
+}
+
 export default class HolbertonCourse {
   constructor(name = '', length = 0, students = []) {
     ValidInputs(name, length, students);
@@ -37,17 +49,5 @@ export default class HolbertonCourse {
       throw new Error('students must be an array');
     }
     this._students = students;
-  }
-}
-
-function ValidInputs(name, length, students) {
-  if (typeof name !== 'string') {
-    throw new TypeError('name must be a string');
-  }
-  if (typeof length !== 'number') {
-    throw new Error('length must be a number');
-  }
-  if (!Array.isArray(students)) {
-    throw new Error('students must be the an Array');
   }
 }

@@ -34,7 +34,15 @@ export default class Pricing {
     return `${this.amount} ${name} (${code})`;
   }
 
-  convertPrice(conversionRate) {
-    return this.amount * conversionRate;
+  static convertPrice(amount = 0, conversionRate = 0) {
+    if (typeof amount !== 'number') {
+      throw new TypeError('amount must be a number');
+    }
+
+    if (typeof conversionRate !== 'number') {
+      throw new TypeError('conversionRate must be a number');
+    }
+
+    return (amount * conversionRate);
   }
 }

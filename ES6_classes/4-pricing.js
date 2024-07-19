@@ -1,7 +1,7 @@
 import Currency from './3-currency';
 
 export default class Pricing {
-  constructor(amount = 0, currency) {
+  constructor(amount, currency) {
     this.amount = amount; // Use the setter for validation
     this.currency = currency; // Use the setter for validation
   }

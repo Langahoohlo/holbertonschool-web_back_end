@@ -17,5 +17,9 @@ export function getListStudents() {
 
   const classRoom = [];
 
-  return classRoom.push(students1, students2, students3);
+  classRoom.push(students1, students2, students3);
+
+  return classRoom
 }
+
+console.log(getListStudents());

@@ -21,5 +21,3 @@ export function getListStudents() {
 
   return classRoom
 }
-
-console.log(getListStudents());

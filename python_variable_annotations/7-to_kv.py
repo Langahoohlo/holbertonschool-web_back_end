@@ -2,10 +2,10 @@
 """
     Module has a function that returns the sum of a list of floats.
 """
-from typing import List, Union
+from typing import List, Union, Tuple
 
 
-def to_kv(k: str, v: Union[int, float]) -> tuple[str, float]:
+def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
     """Function takes to args and returns them in tuple
 
     Args:

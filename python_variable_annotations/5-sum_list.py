@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 """
-    Module has function that returns sum of two floats
+    Module has a function that returns the sum of a list of floats.
 """
 from typing import List
 
 
-def sum_list(input_list: list[float]) -> float:
+def sum_list(input_list: List[float]) -> float:
     """
-        returns the sum of a and b
+    Returns the sum of a list of floats.
 
-        Args:
-            sum_list (float): float
+    Args:
+        input_list (List[float]): A list of floating-point numbers.
 
-        Returns:
-            :param input_list:
+    Returns:
+        float: The sum of the numbers in the list.
     """
     sum_total = 0.0
     for i in input_list:

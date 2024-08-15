@@ -2,9 +2,10 @@
 """
     Module has function that returns sum of two floats
 """
+import math
 
 
-def floor(flr: float) -> float:
+def floor(flr: float) -> int:
     """
         returns the sum of a and b
 
@@ -14,4 +15,4 @@ def floor(flr: float) -> float:
         Returns:
             a flr
     """
-    return flr
+    return math.floor(flr)

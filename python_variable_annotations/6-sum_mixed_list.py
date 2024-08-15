@@ -2,10 +2,10 @@
 """
     Module has a function that returns the sum of a list of floats.
 """
-from typing import List
+from typing import List, Union
 
 
-def sum_mixed_list(mxd_lst: List[float, int]) -> float:
+def sum_mixed_list(mxd_lst: List[Union[float, int]]) -> float:
     """
     Returns the sum of a list of floats.
 

@@ -14,5 +14,7 @@ def sum_list(input_list: list[float]) -> float:
         Returns:
             :param input_list:
     """
-
-    return sum(input_list)
+    sum_total = 0.0
+    for i in input_list:
+        sum_total += i
+    return sum_total

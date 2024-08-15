@@ -2,6 +2,7 @@
 """
     Module has function that returns sum of two floats
 """
+from typing import List
 
 
 def sum_list(input_list: list[float]) -> float:

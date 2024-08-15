@@ -2,9 +2,13 @@
 
 def add(a: float, b: float) -> float:
     """
-        :param a(float) parameter to add
-        :param b(float) parameter to add
+        returns the sum of a and b
 
-        :return return both parameters added
+        Args:
+            a (float): number
+            b (float): number
+
+        Returns:
+            the sum of a and b
     """
     return a + b

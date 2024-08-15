@@ -5,7 +5,7 @@
 from typing import List, Union
 
 
-def to_kv(k: str, v: [int | float]) -> tuple:
+def to_kv(k: str, v: [Union[int, float]]) -> tuple:
     """Function takes to args and returns them in tuple
 
     Args:
@@ -15,4 +15,4 @@ def to_kv(k: str, v: [int | float]) -> tuple:
     Returns:
         tuple[str, int]: _description_
     """
-    return (k, v ** 2)
+    return k, v ** 2

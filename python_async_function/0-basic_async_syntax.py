@@ -1,27 +1,30 @@
 #!/usr/bin/env python3
-"""_summary_
+"""Module contains function that checks async run time
 
-Import: 
-    random: Random number between input
-    asyncio: To make the function asynchronous
-
-Returns:
-    _type_: _description_
+Imports:
+    1-concurrent_coroutines: async function to check
+    time: time module for getting time elapsed
+    asyncio: async module
 """
-import random
+import time
 import asyncio
+n_wait = __import__('1-concurrent_coroutines').wait_n
 
 
-async def wait_random(max_delay: int = 10) -> float:
-    """_summary_
+async def measure_time(n: int, max_delay: int) -> float:
+    """Function meausres async function runtime
 
     Args:
-        max_delay (int, optional): _description_. Defaults to 10.
+        n (int): num of times to run async function
+        max_delay (int): max delay of function
 
     Returns:
-        float: _description_
+        float: return time
     """
-    random_integer = random.uniform(0, max_delay)
-    await asyncio.sleep(random_integer)
+    start_time = time.perf_counter()
+    asyncio.run(n_wait(n, max_delay))
+    end_time = time.perf_counter()
 
-    return random_integer
+    elapsed = end_time - start_time
+
+    return elapsed / n

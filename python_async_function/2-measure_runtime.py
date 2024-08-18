@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 """
     contains a function that measures the runtime when using wait_n
     Imports:

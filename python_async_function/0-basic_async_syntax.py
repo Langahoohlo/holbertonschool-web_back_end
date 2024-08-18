@@ -21,9 +21,7 @@ async def wait_random(max_delay: int = 10) -> float:
     Returns:
         float: _description_
     """
-    min_value: int = 0
-    max_value: int = max_delay
-    random_integer: int = random.uniform(min_value, max_value)
-    await asyncio.sleep(float(random_integer))
+    random_integer = random.uniform(0, max_delay)
+    await asyncio.sleep(secs)
 
     return random_integer

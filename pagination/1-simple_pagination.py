@@ -1,29 +1,28 @@
-#!/usr/bin/env Python3
+#!/usr/bin/env python3
+"""Module contains function that returns pagination range
+Imports:
+    Tuple: Tuple type annotation
+    List: List type anotaton
+    csv: csv module
 """
-    A script to return a tuple containing page and page size
-"""
-
 import csv
-import math
 from typing import List, Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """
-    Function o fthe module
+    """Function returns pagination range
 
     Args:
-        page (_type_): page index
-        page_size (_type_): page size of items to display
+        page (int): page number
+        page_size (int): page size
 
     Returns:
-        _type_: A tiple of both page and page size
+        Tuple[int, int]: start to end range
     """
     start = (page - 1) * page_size
     end = page * page_size
-    page_tuple = (start, end)
-    return page_tuple
 
+    return ((start, end))
 
 
 class Server:
@@ -46,14 +45,7 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """_summary_
-
-        Args:
-            page (int, optional): _description_. Defaults to 1.
-            page_size (int, optional): _description_. Defaults to 10.
-
-        Returns:
-            List[List]: _description_
+        """Gets specific data
         """
         assert page > 0
         assert page_size > 0
@@ -67,4 +59,3 @@ class Server:
         if start >= len(filtered_list):
             return []
         return filtered_list[start:end]
-    

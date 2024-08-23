@@ -1,28 +1,11 @@
 #!/usr/bin/env python3
-"""Module contains function that returns pagination range
-Imports:
-    Tuple: Tuple type annotation
-    List: List type anotaton
-    csv: csv module
-"""
+""" Simple pagination """
+
 import csv
-from typing import List, Tuple
+import math
+from typing import List
 
-
-def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """Function returns pagination range
-
-    Args:
-        page (int): page number
-        page_size (int): page size
-
-    Returns:
-        Tuple[int, int]: start to end range
-    """
-    start = (page - 1) * page_size
-    end = page * page_size
-
-    return ((start, end))
+index_range = __import__('0-simple_helper_function').index_range
 
 
 class Server:
@@ -45,17 +28,21 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """Gets specific data
         """
-        assert page > 0
-        assert page_size > 0
-        assert isinstance(page, int)
-        assert isinstance(page_size, int)
-        myRange = index_range(page, page_size)
-        start = myRange[0]
-        end = myRange[1]
-        filtered_list = self.dataset()
+            - Use assert to verify that both arguments
+            are integers greater than 0.
 
-        if start >= len(filtered_list):
-            return []
-        return filtered_list[start:end]
+            - Use index_range to find the correct indexes to paginate
+            the dataset correctly and return the appropriate page
+            of the dataset (i.e. the correct list of rows).
+        """
+        assert(type(page) == int) and page > 0
+        assert(type(page_size) == int) and page_size > 0
+
+        start, end = index_range(page, page_size)
+        result = []
+        if start >= len(self.dataset()):
+            return result
+
+        result = self.dataset()
+        return result[start:end]

@@ -2,7 +2,7 @@
 """
     A script to return a tuple containing page and page size
 """
-from typing import List, Tuple
+from typing import Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:

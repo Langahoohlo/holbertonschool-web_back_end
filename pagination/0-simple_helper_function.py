@@ -1,22 +1,22 @@
-#!/usr/bin/env Python3
-"""
-    A script to return a tuple containing page and page size
+#!/usr/bin/env python3
+"""Module contains function that returns pagination range
+Imports:
+    Tuple: Tuple type annotation from typing module
 """
 from typing import Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """
-    Function o fthe module
+    """Function returns pagination range in the form of tuple
 
     Args:
-        page (_type_): page index
-        page_size (_type_): page size of items to display
+        page (int): page number
+        page_size (int): page size
 
     Returns:
-        _type_: A tiple of both page and page size
+        Tuple[int, int]: start to end range
     """
-    start = (page - 1) * page_size
-    end = page * page_size
-    page_tuple = (start, end)
-    return page_tuple
+    start: int = (page - 1) * page_size
+    end: int = page * page_size
+
+    return (start, end)

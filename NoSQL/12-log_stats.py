@@ -1,25 +1,26 @@
 #!/usr/bin/env python3
-'''
-Provide stats about Nginx logs stored in MongoDB
-'''
+"""Log stats"""
 from pymongo import MongoClient
 
-def log_stats():
-    x = MongoClient('mongodb://localhost:27017').logs.nginx
+
+def helper(a: dict) -> int:
+    """return log"""
+    client = MongoClient('mongodb://127.0.0.1:27017')
+    logs = client.logs.nginx
+    return logs.count_documents(a)
 
 
-    print(f'{x.count_documents({})} logs')
+def main():
+    """ provides some stats about Nginx logs stored in MongoDB """
+    print(f"{helper({})} logs")
+    print("Methods:")
+    print(f"\tmethod GET: {helper({'method': 'GET'})}")
+    print(f"\tmethod POST: {helper({'method': 'POST'})}")
+    print(f"\tmethod PUT: {helper({'method': 'PUT'})}")
+    print(f"\tmethod PATCH: {helper({'method': 'PATCH'})}")
+    print(f"\tmethod DELETE: {helper({'method': 'DELETE'})}")
+    print(f"{helper({'method': 'GET', 'path': '/status'})} status check")
 
- 
-    print('Methods:')
-    print(f'\tmethod GET: {x.count_documents({"method": "GET"})}')
-    print(f'\tmethod POST: {x.count_documents({"method": "POST"})}')
-    print(f'\tmethod PUT: {x.count_documents({"method": "PUT"})}')
-    print(f'\tmethod PATCH: {x.count_documents({"method": "PATCH"})}')
-    print(f'\tmethod DELETE: {x.count_documents({"method": "DELETE"})}')
-
-
-    print(f'{x.count_documents({"method": "GET", "path": "/status"})} status check')
 
 if __name__ == "__main__":
-    log_stats()
+    main()

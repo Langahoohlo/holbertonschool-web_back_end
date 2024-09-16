@@ -30,5 +30,5 @@ const app = http.createServer(async (req, res) => {
 });
 
 app.listen(port, hostName, () => {
-    console.log(`Server running is running at ${hostName}:${port}`)
+  console.log(`Server running is running at ${hostName}:${port}`);
 });

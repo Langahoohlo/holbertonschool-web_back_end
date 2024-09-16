@@ -3,16 +3,18 @@ const fs = require('fs');
 export function countStudents(path) {
   try {
     const data = fs.readFileSync(path, 'utf8');
-    const lines = data.split('\n').filter(line => line.trim() !== '');
-    const students = lines.slice(1).map(line => {
+    const lines = data.split('\n').filter((line) => line.trim() !== '');
+    const students = lines.slice(1).map((line) => {
       const [firstname, lastname, age, field] = line.split(',');
-      return { firstname, lastname, age, field };
+      return {
+        firstname, lastname, age, field,
+      };
     });
 
     console.log(`Number of students: ${students.length}`);
 
     const fields = {};
-    students.forEach(student => {
+    students.forEach((student) => {
       if (!fields[student.field]) {
         fields[student.field] = [];
       }

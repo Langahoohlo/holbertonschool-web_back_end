@@ -9,7 +9,6 @@ const app = http.createServer((req, res) => {
   res.end('Hello Holberton School!');
 });
 
-app.listen(port, hostName, () => {
-  console.log('...')
-  // console.log(`Server running is running at ${hostName}:${port}`);
-});
+app.listen(port);
+
+module.exports = app;

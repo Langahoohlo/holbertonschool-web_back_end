@@ -33,4 +33,4 @@ app.listen(port, hostName, () => {
   console.log(`Server running is running at ${hostName}:${port}`);
 });
 
-module.exports = app
+module.exports = app;
